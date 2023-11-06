@@ -8,3 +8,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+img{
+  width: 100%;
+  height: 100%;
+}
+
+:root{
+  --bg-color:#081b29;
+  --second-bg-color:#112e42;
+  --text-color:#ededed;
+  --main-color:#00abf0;
+  
+}

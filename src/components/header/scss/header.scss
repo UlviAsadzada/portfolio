@@ -1,15 +1,34 @@
-header{
+header {
      z-index: 9999;
      color: #fff;
      position: fixed;
      width: 100%;
-     a{color: #fff;}
-     
+     font-family: 'Poppins', sans-serif;
+     font-weight: 600;
 
-          .navs{
-               ul{
-                    li{padding:0 10px;}
+     .header_boxes {
+          margin-top: 20px;
+
+        i{color: red;} 
+
+          .navs {
+               ul {
+                    li {
+                         padding: 0 30px;
+
+                         a {  
+                              font-size: 1.3rem;
+                              color: var(--text-color);
+                              font-weight: 500;
+                              transition: .3s;     
+                         }
+                         a:hover,.active{
+
+                                   color: var(--main-color);
+                              
+                         }
+                    }
                }
           }
-     
+     }
 }
