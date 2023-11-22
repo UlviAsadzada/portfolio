@@ -17,9 +17,6 @@ const Header = () => {
                <li><a href="#">Contact</a></li>
           </ul>
       </div>
-      <i class="bi bi-filter-right"></i>
-      
-
      </div>
     </header>
     </>
