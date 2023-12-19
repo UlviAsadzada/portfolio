@@ -1,0 +1,25 @@
+.projects{
+  
+
+     .project-cart{  
+          //  z-index: 999;
+          margin:20px 0;
+          position: relative;
+          opacity: 70;
+          .cart-img{
+               height: 35vh;
+               img{
+                    border-radius: 15px;
+                    opacity: 60;
+               }
+              
+          }
+          .cart-title{
+               position: absolute;
+               bottom: 0px;
+               left: 0;
+             opacity: 1;
+               transition: .2s ease-in-out;
+          }
+     }
+}

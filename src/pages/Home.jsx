@@ -4,8 +4,26 @@ import profil from'../images/profil2.jpg'
 import CV from '../pdf/CV.pdf'
 import { useDispatch, useSelector } from 'react-redux'
 import { setDarkTheme, setDefaultTheme } from '../redux/themeSlice'
+import { NavLink, useNavigate } from 'react-router-dom'
+import Routers from '../Routers/Routers'
+
+const nav__Links=[
+  {
+    path:'project',
+    display:'Project'
+  },{
+    path:'skills',
+    display:"Skills"
+  }
+]
+
+
+
+
+
 
 const Home = () => {
+  const navigate = useNavigate();
 
 
 // themeSlice
@@ -43,7 +61,7 @@ const handleThemeToggle=()=>{
     <>
 
     
-    <div className="home md:w-11/12 m-auto lg:w-4/6 ">
+    <div className="home">
       <div className="home_boxes">
 
       
@@ -61,6 +79,7 @@ const handleThemeToggle=()=>{
         <i class="ri-github-line"/>
         </div>
       </div>
+
       <div className="home_center">
         <div className="profil_about">
           <ul className='flex flex-wrap gap-1 justify-between text-center'>
@@ -80,8 +99,9 @@ const handleThemeToggle=()=>{
        </div>
 
        <div className="profil_buttons">
+    <div className='CV_Buttons'>
         <a download="{}" href={CV}>
-       <button class="botao">     
+          <button class="botao">     
   <svg  width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mysvg"><g id="SVGRepo_bgCarrier" stroke-width="0">
     </g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
        <g id="Interface / Download"> 
@@ -90,14 +110,48 @@ const handleThemeToggle=()=>{
     </g> </g>
   </svg>
 
-  <span class="texto">Download</span>
-      </button>
-      </a>
+   <span class="texto">
+    Download CV <i class="ri-download-line"></i>
+    </span>
+
+          </button>
+        </a>
+    </div>
+    
+    <div className="nav_buttons">
+    <a href="">
+    <i class="ri-whatsapp-line"></i>
+    </a>
+    <a href="">
+    <i class="ri-messenger-line"></i>
+    </a>
+    </div>
        </div>
       </div>
       
+      
       </div>
-      <label className='theme'>
+      <div className="home_bottom">
+        <ul>
+          {
+            nav__Links.map((item,index)=>{
+              return(
+                <li>
+                  <NavLink to={item.path} key={index} className={(navClass)=>
+                  navClass.isActive?"btn_active":''}>
+                <div className="networks">
+                  {item.display}
+                </div>
+                  </NavLink>
+                </li>
+              )
+            })
+          }
+        </ul>
+        <Routers/>
+      </div>
+     {/* Dark-Mode start */}
+      <div className='dark_Mode'>
       {
         darkMode?(
     <>
@@ -113,7 +167,9 @@ const handleThemeToggle=()=>{
             </>
         )
       }
-     </label>
+     </div>
+     {/* Dark-Mode end*/}
+
     </div>
     </>
     {/* home  finish*/}

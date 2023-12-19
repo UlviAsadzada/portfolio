@@ -23,7 +23,7 @@ img{
 }
 
 
-.theme {
+.dark_Mode {
   --bg-color: #fff;
   --main-color: #323232;
   position: relative;
@@ -36,7 +36,7 @@ img{
   border-radius: 100%;
   border: 2px solid var(--main-color);
   box-shadow: 4px 4px var(--main-color);
-}
+
 
 .input {
   cursor: pointer;
@@ -63,7 +63,7 @@ img{
   stroke: var(--main-color);
   display: none;
 }
-
+}
 
 
 .input:checked ~ .icon.icon-sun {
